@@ -121,7 +121,7 @@ export default {
   },
   methods: {
     async getUserInfoDetail () {
-      const { data: { userInfo } } = await getUserInfoDetail()
+      const { data: { data: { userInfo } } } = await getUserInfoDetail()
       this.detail = userInfo
       console.log(this.detail)
     },
@@ -130,7 +130,7 @@ export default {
         title: '温馨提示',
         message: '你确认要退出吗'
       }).then(() => {
-        this.$store.dispatch('/uesr/logout')
+        this.$store.dispatch('user/logout')
       }).catch(() => {
 
       })
